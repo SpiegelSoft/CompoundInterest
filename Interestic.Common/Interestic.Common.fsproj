@@ -14,8 +14,8 @@
   <ItemGroup>
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.2" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.1" />
-    <PackageReference Include="Telerik.UI.for.Xamarin" Version="2018.3.1018.1" />
-    <PackageReference Include="XamarinForms.Reactive.FSharp" Version="1.0.0.44" />
+    <PackageReference Include="Telerik.UI.for.Xamarin" Version="2018.3.1109.1" />
+    <PackageReference Include="XamarinForms.Reactive.FSharp" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>

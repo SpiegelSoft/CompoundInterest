@@ -126,10 +126,10 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="ReactiveUI">
-      <HintPath>..\packages\ReactiveUI.9.1.4\lib\monoandroid80\ReactiveUI.dll</HintPath>
+      <HintPath>..\packages\ReactiveUI.9.2.2\lib\monoandroid80\ReactiveUI.dll</HintPath>
     </Reference>
     <Reference Include="ReactiveUI.XamForms">
-      <HintPath>..\packages\ReactiveUI.XamForms.9.1.4\lib\netstandard2.0\ReactiveUI.XamForms.dll</HintPath>
+      <HintPath>..\packages\ReactiveUI.XamForms.9.2.2\lib\netstandard2.0\ReactiveUI.XamForms.dll</HintPath>
     </Reference>
     <Reference Include="SkiaSharp">
       <HintPath>..\packages\SkiaSharp.1.60.3\lib\MonoAndroid\SkiaSharp.dll</HintPath>
@@ -176,58 +176,58 @@
     <Reference Include="mscorlib" />
     <Reference Include="Mono.Android" />
     <Reference Include="Telerik.Documents.SpreadsheetStreaming">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Xamarin.Android.Chart">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.Xamarin.Android.Chart.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.Xamarin.Android.Chart.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Xamarin.Android.Common">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.Xamarin.Android.Common.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.Xamarin.Android.Common.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Xamarin.Android.Data">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.Xamarin.Android.Data.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.Xamarin.Android.Data.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Xamarin.Android.Input">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.Xamarin.Android.Input.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.Xamarin.Android.Input.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Xamarin.Android.List">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.Xamarin.Android.List.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.Xamarin.Android.List.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Xamarin.Android.Primitives">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.Xamarin.Android.Primitives.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.Xamarin.Android.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.XamarinForms.Barcode">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.XamarinForms.Barcode.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.XamarinForms.Barcode.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.XamarinForms.Chart">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.XamarinForms.Chart.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.XamarinForms.Chart.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.XamarinForms.Common">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.XamarinForms.Common.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.XamarinForms.Common.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.XamarinForms.ConversationalUI">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.XamarinForms.ConversationalUI.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.XamarinForms.ConversationalUI.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.XamarinForms.DataControls">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.XamarinForms.DataControls.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.XamarinForms.DataControls.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.XamarinForms.DataGrid">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.XamarinForms.DataGrid.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.XamarinForms.DataGrid.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.XamarinForms.DataVisualization">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.XamarinForms.DataVisualization.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.XamarinForms.DataVisualization.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.XamarinForms.Input">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.XamarinForms.Input.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.XamarinForms.Input.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.XamarinForms.Primitives">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.XamarinForms.Primitives.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.XamarinForms.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.XamarinForms.SkiaSharp">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.XamarinForms.SkiaSharp.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Zip">
-      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1018.1\lib\MonoAndroid10\Telerik.Zip.dll</HintPath>
+      <HintPath>..\packages\Telerik.UI.for.Xamarin.2018.3.1109.1\lib\MonoAndroid10\Telerik.Zip.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Android.Arch.Core.Common">
       <HintPath>..\packages\Xamarin.Android.Arch.Core.Common.1.0.0.1\lib\MonoAndroid80\Xamarin.Android.Arch.Core.Common.dll</HintPath>
@@ -323,7 +323,7 @@
       <HintPath>..\packages\Xamarin.GooglePlayServices.Tasks.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="XamarinForms.Reactive.FSharp">
-      <HintPath>..\packages\XamarinForms.Reactive.FSharp.1.0.0.44\lib\netstandard2.0\XamarinForms.Reactive.FSharp.dll</HintPath>
+      <HintPath>..\packages\XamarinForms.Reactive.FSharp.1.0.1\lib\netstandard2.0\XamarinForms.Reactive.FSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
