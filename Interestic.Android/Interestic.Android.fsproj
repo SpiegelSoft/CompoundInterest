@@ -58,6 +58,7 @@
     </DefineConstants>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <GenerateTailCalls>true</GenerateTailCalls>
+    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.FSharp.targets" />
   <ItemGroup>
