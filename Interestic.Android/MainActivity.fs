@@ -29,13 +29,18 @@ type DroidPlatform(mainActivity: Activity) =
         member __.GetMetaDataEntry key = metaData.GetString key
 
 open ReactiveUI
+open Microsoft.AppCenter
+open Microsoft.AppCenter.Analytics
+open Microsoft.AppCenter.Crashes
 
 [<Activity (Label = "Compound Interest", ScreenOrientation = ScreenOrientation.Portrait, MainLauncher = true, Icon = "@drawable/icon")>]
 type MainActivity () =
     inherit FormsApplicationActivity ()
-    let createDashboardViewModel() = new DashboardViewModel() :> IRoutableViewModel
+    let createDashboardViewModel() = 
+        new DashboardViewModel() :> IRoutableViewModel
     override this.OnCreate (bundle) =
         base.OnCreate (bundle)
+        AppCenter.Start("0fb371c4-5380-4820-ae6e-4055c7e5f307", typeof<Analytics>, typeof<Crashes>)
         AppDomain.CurrentDomain.UnhandledException.Subscribe(fun ex ->
             ()
         ) |> ignore

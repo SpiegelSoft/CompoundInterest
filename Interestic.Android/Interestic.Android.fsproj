@@ -10,7 +10,7 @@
     <ProjectGuid>e0eb4c50-6ee8-4bd4-85b0-30ce53ece36e</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Interestic.Android</RootNamespace>
-    <AssemblyName>Xrf.CarouselDemo.Android</AssemblyName>
+    <AssemblyName>Interestic.Android</AssemblyName>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
@@ -20,7 +20,7 @@
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
     <Name>Xrf.CarouselDemo.Android</Name>
-    <SelectedDevice>5.1" Marshmallow (6.0.0) XXHDPI Phone</SelectedDevice>
+    <SelectedDevice>Samsung SM-G925F</SelectedDevice>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <DefaultDevice>5.1" Marshmallow (6.0.0) XXHDPI Phone</DefaultDevice>
@@ -128,6 +128,24 @@
       <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.3.0.0.5\lib\monoandroid71\ImageCircle.Forms.Plugin.dll</HintPath>
     </Reference>
     <Reference Include="Java.Interop" />
+    <Reference Include="Microsoft.AppCenter">
+      <HintPath>..\packages\Microsoft.AppCenter.1.10.0\lib\MonoAndroid403\Microsoft.AppCenter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics">
+      <HintPath>..\packages\Microsoft.AppCenter.Analytics.1.10.0\lib\MonoAndroid403\Microsoft.AppCenter.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics.Android.Bindings">
+      <HintPath>..\packages\Microsoft.AppCenter.Analytics.1.10.0\lib\MonoAndroid403\Microsoft.AppCenter.Analytics.Android.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Android.Bindings">
+      <HintPath>..\packages\Microsoft.AppCenter.1.10.0\lib\MonoAndroid403\Microsoft.AppCenter.Android.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes">
+      <HintPath>..\packages\Microsoft.AppCenter.Crashes.1.10.0\lib\MonoAndroid403\Microsoft.AppCenter.Crashes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes.Android.Bindings">
+      <HintPath>..\packages\Microsoft.AppCenter.Crashes.1.10.0\lib\MonoAndroid403\Microsoft.AppCenter.Crashes.Android.Bindings.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -333,7 +351,7 @@
       <HintPath>..\packages\Xamarin.GooglePlayServices.Tasks.60.1142.1\lib\MonoAndroid80\Xamarin.GooglePlayServices.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="XamarinForms.Reactive.FSharp">
-      <HintPath>..\packages\XamarinForms.Reactive.FSharp.1.0.1\lib\netstandard2.0\XamarinForms.Reactive.FSharp.dll</HintPath>
+      <HintPath>..\packages\XamarinForms.Reactive.FSharp.1.0.1.1\lib\netstandard2.0\XamarinForms.Reactive.FSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -8,11 +8,11 @@ module AssemblyInfo =
   // Information about this assembly is defined by the following attributes. 
   // Change them to the values specific to your project.
 
-  [<assembly: AssemblyTitle("Xrf.CarouselDemo.Android")>]
+  [<assembly: AssemblyTitle("Interesting")>]
   [<assembly: AssemblyDescription("")>]
   [<assembly: AssemblyConfiguration("")>]
   [<assembly: AssemblyCompany("")>]
-  [<assembly: AssemblyProduct("Xrf.CarouselDemo.Android")>]
+  [<assembly: AssemblyProduct("Interesting")>]
   [<assembly: AssemblyCopyright("Copyright ©  2018")>]
   [<assembly: AssemblyTrademark("")>]
   [<assembly: AssemblyCulture("")>]

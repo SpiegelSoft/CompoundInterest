@@ -30,7 +30,7 @@ type DashboardView(theme: Theme) =
                         |> withEditorType <@ fun (d: CompoundInterestInput) -> d.Compounded @> EditorType.PickerEditor
                         theme.GenerateRadButton()
                         |> withCaption "Calculate"
-                        |> withBackgroundColor Color.Aqua
+                        |> withBackgroundColor Color.Green
                         |> withMargin (new Thickness(12.0))
                         |> withButtonCommand this.ViewModel.Calculate
                         theme.GenerateLabel<DashboardView>(this, <@ fun v -> v.ErrorMessage @>)
@@ -44,22 +44,22 @@ type DashboardView(theme: Theme) =
                     [|
                         theme.GenerateTitle() |> withLabelText "Total Due" |> withMargin (new Thickness(12.0))
                         theme.GenerateLabel<DashboardView>(this, <@ fun v -> v.TotalDue @>)
-                            |> withOneWayBinding(this, <@ fun vm -> vm.TotalDue @>, <@ fun v -> v.TotalDue.Text @>, fun amount -> amount.ToString("#.00"))
-                            |> withHorizontalOptions LayoutOptions.EndAndExpand
-                            |> withHorizontalTextAlignment TextAlignment.End
-                            |> withMargin (new Thickness(12.0))
+                        |> withOneWayBinding(this, <@ fun vm -> vm.TotalDue @>, <@ fun v -> v.TotalDue.Text @>, fun amount -> amount.ToString("#.00"))
+                        |> withHorizontalOptions LayoutOptions.EndAndExpand
+                        |> withHorizontalTextAlignment TextAlignment.End
+                        |> withMargin (new Thickness(12.0))
                     |]
                 ) |> thenRow(
                     [|
                         theme.GenerateTitle() |> withLabelText "Interest Accrued" |> withMargin (new Thickness(12.0))
                         theme.GenerateLabel<DashboardView>(this, <@ fun v -> v.InterestAccrued @>)
-                            |> withOneWayBinding(this, <@ fun vm -> vm.InterestAccrued @>, <@ fun v -> v.InterestAccrued.Text @>, fun amount -> amount.ToString("#.00"))
-                            |> withHorizontalOptions LayoutOptions.EndAndExpand
-                            |> withHorizontalTextAlignment TextAlignment.End 
-                            |> withMargin (new Thickness(12.0))
+                        |> withOneWayBinding(this, <@ fun vm -> vm.InterestAccrued @>, <@ fun v -> v.InterestAccrued.Text @>, fun amount -> amount.ToString("#.00"))
+                        |> withHorizontalOptions LayoutOptions.EndAndExpand
+                        |> withHorizontalTextAlignment TextAlignment.End 
+                        |> withMargin (new Thickness(12.0))
                     |]) |> createFromRows |> withBackgroundColor Color.DarkSlateGray |> withMargin (new Thickness(12.0))
             )
-            |> withDrawerLocation SideDrawerLocation.Bottom
+            |> withDrawerLocation SideDrawerLocation.Top
             |> withDrawerTransitionType SideDrawerTransitionType.SlideInOnTop
             |> withDrawerLength 180.0
             |> withTwoWayBinding (this, <@ fun vm -> vm.ShowResults @>, <@ fun v -> v.SideDrawer.IsOpen @>, id, id)
