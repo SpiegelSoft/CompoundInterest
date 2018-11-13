@@ -71,7 +71,7 @@ type DashboardView(theme: Theme) =
                         |> withHorizontalOptions LayoutOptions.EndAndExpand
                         |> withHorizontalTextAlignment TextAlignment.End 
                         |> withMargin (new Thickness(12.0))
-                        theme.GenerateRadButton<DashboardView>(this, <@ fun v -> v.CopyTotalDue @>)
+                        theme.GenerateRadButton<DashboardView>(this, <@ fun v -> v.CopyInterestAccrued @>)
                         |> withCaption "Copy"
                         |> withButtonCommand this.ViewModel.CopyTextToClipboard
                         |> withHeightRequest 24.0
