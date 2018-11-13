@@ -25,6 +25,7 @@ type DashboardView(theme: Theme) =
                 theme.VerticalLayout() |> withBlocks(
                     [|
                         theme.GenerateDataForm<DashboardView>(this, <@ fun v -> v.DataForm @>) 
+                        |> withCommitMode CommitMode.Immediate
                         |> withDataSource this.ViewModel.Input 
                         |> withDataSourceProvider (new CompoundingProvider())
                         |> withEditorType <@ fun (d: CompoundInterestInput) -> d.Compounded @> EditorType.PickerEditor
@@ -60,7 +61,7 @@ type DashboardView(theme: Theme) =
                     |]) |> createFromRows |> withBackgroundColor Color.DarkSlateGray |> withMargin (new Thickness(12.0))
             )
             |> withDrawerLocation SideDrawerLocation.Top
-            |> withDrawerTransitionType SideDrawerTransitionType.SlideInOnTop
-            |> withDrawerLength 180.0
+            |> withDrawerTransitionType SideDrawerTransitionType.ScaleUp
+            |> withDrawerLength 130.0
             |> withTwoWayBinding (this, <@ fun vm -> vm.ShowResults @>, <@ fun v -> v.SideDrawer.IsOpen @>, id, id)
             :> View

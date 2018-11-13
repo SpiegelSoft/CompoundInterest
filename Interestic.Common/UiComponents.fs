@@ -73,6 +73,7 @@ module ViewHelpers =
     open Telerik.XamarinForms.Input
     open ExpressionConversion
 
+    let withCommitMode mode (element: #RadDataForm) = element.CommitMode <- mode; element
     let withDataSourceProvider provider (element: #RadDataForm) = element.PropertyDataSourceProvider <- provider; element
     let withDataSource source (element: #RadDataForm) = element.Source <- source; element
     let withEditorType (property: Expr<'vm -> 'p>) editorType (element: #RadDataForm) = element.RegisterEditor(property |> propertyName, editorType); element

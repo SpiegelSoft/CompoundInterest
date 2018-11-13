@@ -43,6 +43,11 @@ open Telerik.XamarinForms.Input.DataForm
 open System.Collections
 open System.Linq
 
+type PositiveNumberValidatorAttribute(message) =
+    inherit ValidatorBaseAttribute()
+    do base.NegativeFeedback <- message
+    override __.ValidateCore value = match value with | :? float as num when num > 0.0 -> true | _ -> false
+
 type CompoundingProvider() =
     inherit PropertyDataSourceProvider()
     let compoundingSource = "CompoundingSource" :> obj
@@ -56,14 +61,16 @@ and CompoundInterestInput() =
     let today = DateTime.Today
     let mutable principal, interestRate, startDate, endDate, compounded, use360DayYear = 0.0, 0.0, today, today.AddYears(2), Compounding.options |> Seq.head |> (fun x -> x.Key), false
     [<DisplayOptions (Header = "Principal", PlaceholderText = "Enter Principal")>]
-    [<NumericalRangeValidator(0.0, System.Double.MaxValue, "Principal must be a non-negative number.")>]
+    [<PositiveNumberValidator("Principal must be a positive number.")>]
     member __.Principal with get() = principal and set(value) = base.RaiseAndSetIfChanged(&principal, value, "Principal") |> ignore
     [<DisplayOptions (Header = "Interest Rate (%)", PlaceholderText = "Enter Interest Rate")>]
-    [<NumericalRangeValidator(0.0, System.Double.MaxValue, "Interest rate must have a non-negative value.")>]
+    [<PositiveNumberValidator("Interest rate must be a positive percentage.")>]
     member __.InterestRate with get() = interestRate and set(value) = base.RaiseAndSetIfChanged(&interestRate, value, "InterestRate") |> ignore
     [<DisplayOptions (Header = "Start Date", PlaceholderText = "Enter Start Date")>]
+    [<DisplayValueFormat(Date = "dd MMM yyyy")>]
     member __.StartDate with get() = startDate and set(value) = base.RaiseAndSetIfChanged(&startDate, value, "StartDate") |> ignore
     [<DisplayOptions (Header = "End Date", PlaceholderText = "Enter End Date")>]
+    [<DisplayValueFormat(Date = "dd MMM yyyy")>]
     member __.EndDate with get() = endDate and set(value) = base.RaiseAndSetIfChanged(&endDate, value, "EndDate") |> ignore
     [<DisplayOptions (Header = "Rests per Year", PlaceholderText = "Enter Rests per Year")>]
     [<DataSourceKey("CompoundingSource")>]
