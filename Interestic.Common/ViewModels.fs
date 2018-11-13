@@ -83,9 +83,9 @@ type CompoundInterestOutput = {
     InterestAccrued: float
 }
 
-type DashboardViewModel(?host: IScreen) =
+type DashboardViewModel(?host: IScreen, ?platform: IInteresticPlatform) =
     inherit PageViewModel()
-    let host = LocateIfNone host
+    let host, platform = LocateIfNone host, LocateIfNone platform
     let mutable totalDue = 0.0
     let mutable interestAccrued = 0.0
     let mutable showResults = false
@@ -117,8 +117,10 @@ type DashboardViewModel(?host: IScreen) =
     member __.ErrorMessage = errorMessage.Value
     member val Input = new CompoundInterestInput()
     member val Calculate = Unchecked.defaultof<ReactiveCommand<Unit, CompoundInterestOutput>> with get, set
+    member val CopyTextToClipboard = Unchecked.defaultof<ReactiveCommand<string, string>> with get, set
     override this.SetUpCommands() = 
         base.SetUpCommands()
+        let copyTextToClipboard text = platform.CopyTextToClipboard "Calculation Results" text; text
         let inputObservable =
             Observable.CombineLatest([
                 this.Input.WhenAnyValue(fun vm -> vm.Principal).Select(fun _ -> this.Input)
@@ -127,6 +129,8 @@ type DashboardViewModel(?host: IScreen) =
                 this.Input.WhenAnyValue(fun vm -> vm.EndDate).Select(fun _ -> this.Input)
             ]).Select(fun _ -> this.Input)
         errorMessage <- inputObservable.Select(getErrorMessage).ObserveOn(RxApp.MainThreadScheduler).ToProperty(this, fun vm -> vm.ErrorMessage)
+        this.CopyTextToClipboard <- ReactiveCommand.Create(copyTextToClipboard) |> disposeWith this.PageDisposables
+        this.CopyTextToClipboard.Select(sprintf "Copied \"%s\" to clipboard.").ObserveOn(RxApp.MainThreadScheduler).Subscribe(platform.ShowToastNotification) |> disposeWith this.PageDisposables |> ignore
         this.Calculate <- ReactiveCommand.Create(calculateCompoundInterest this.Input, inputObservable.Select(isValid)) |> disposeWith this.PageDisposables
         this.Calculate.ObserveOn(RxApp.MainThreadScheduler).Subscribe(fun result ->
             this.TotalDue <- result.TotalDue

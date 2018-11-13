@@ -73,6 +73,8 @@ module ViewHelpers =
     open Telerik.XamarinForms.Input
     open ExpressionConversion
 
+    let withCornerRadius radius (element: #RadButton) = element.CornerRadius <- radius; element
+    let withButtonPadding padding (element: #RadButton) = element.Padding <- padding; element
     let withCommitMode mode (element: #RadDataForm) = element.CommitMode <- mode; element
     let withDataSourceProvider provider (element: #RadDataForm) = element.PropertyDataSourceProvider <- provider; element
     let withDataSource source (element: #RadDataForm) = element.Source <- source; element

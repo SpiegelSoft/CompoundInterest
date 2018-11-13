@@ -27,7 +27,12 @@ type DroidPlatform(mainActivity: Activity) =
         member __.RegisterDependencies _ = 0 |> ignore
         member __.GetLocalFilePath fileName = localFilePath fileName
         member __.GetMetaDataEntry key = metaData.GetString key
+        member __.CopyTextToClipboard description text =
+            let clipboard = mainActivity.GetSystemService(Context.ClipboardService) :?> ClipboardManager
+            clipboard.PrimaryClip <- ClipData.NewPlainText(description, text)
+        member __.ShowToastNotification text = Toast.MakeText(mainActivity, text, ToastLength.Long).Show()
 
+       
 open ReactiveUI
 open Microsoft.AppCenter
 open Microsoft.AppCenter.Analytics

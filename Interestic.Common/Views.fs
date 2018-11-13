@@ -18,6 +18,9 @@ type DashboardView(theme: Theme) =
     member val ErrorMessage = Unchecked.defaultof<Label> with get, set
     member val TotalDue = Unchecked.defaultof<Label> with get, set
     member val InterestAccrued = Unchecked.defaultof<Label> with get, set
+    member val CopyTotalDue = Unchecked.defaultof<RadButton> with get, set
+    member val CopyInterestAccrued = Unchecked.defaultof<RadButton> with get, set
+    member val CopyAll = Unchecked.defaultof<RadButton> with get, set
     new() = new DashboardView(Themes.DefaultTheme)
     override this.CreateContent() =
         theme.GenerateSideDrawer<DashboardView>(this, <@ fun v -> v.SideDrawer @>)
@@ -41,23 +44,43 @@ type DashboardView(theme: Theme) =
                         |> withHorizontalTextAlignment TextAlignment.Center
                     |]))
             |> withDrawerContent (
-                theme.GenerateGrid([Auto; Auto], [Auto; 1 |> Star]) |> withRow(
+                theme.GenerateGrid([Auto; Auto], [Auto; 1 |> Star; Auto]) |> withRow(
                     [|
-                        theme.GenerateTitle() |> withLabelText "Total Due" |> withMargin (new Thickness(12.0))
+                        theme.GenerateLabel() |> withLabelText "Total Due" |> withMargin (new Thickness(12.0))
                         theme.GenerateLabel<DashboardView>(this, <@ fun v -> v.TotalDue @>)
                         |> withOneWayBinding(this, <@ fun vm -> vm.TotalDue @>, <@ fun v -> v.TotalDue.Text @>, fun amount -> amount.ToString("#.00"))
                         |> withHorizontalOptions LayoutOptions.EndAndExpand
                         |> withHorizontalTextAlignment TextAlignment.End
                         |> withMargin (new Thickness(12.0))
+                        theme.GenerateRadButton<DashboardView>(this, <@ fun v -> v.CopyTotalDue @>)
+                        |> withCaption "Copy"
+                        |> withButtonCommand this.ViewModel.CopyTextToClipboard
+                        |> withHeightRequest 24.0
+                        |> withBackgroundColor Color.Green
+                        |> withCornerRadius 12
+                        |> withButtonFontSize 12.0
+                        |> withButtonPadding (new Thickness(0.0))
+                        |> withMargin (new Thickness(12.0))
+                        |> withOneWayBinding(this, <@ fun vm -> vm.TotalDue @>, <@ fun v -> v.CopyTotalDue.CommandParameter @>, fun f -> f.ToString("#.00") :> obj)
                     |]
                 ) |> thenRow(
                     [|
-                        theme.GenerateTitle() |> withLabelText "Interest Accrued" |> withMargin (new Thickness(12.0))
+                        theme.GenerateLabel() |> withLabelText "Interest Accrued" |> withMargin (new Thickness(12.0))
                         theme.GenerateLabel<DashboardView>(this, <@ fun v -> v.InterestAccrued @>)
                         |> withOneWayBinding(this, <@ fun vm -> vm.InterestAccrued @>, <@ fun v -> v.InterestAccrued.Text @>, fun amount -> amount.ToString("#.00"))
                         |> withHorizontalOptions LayoutOptions.EndAndExpand
                         |> withHorizontalTextAlignment TextAlignment.End 
                         |> withMargin (new Thickness(12.0))
+                        theme.GenerateRadButton<DashboardView>(this, <@ fun v -> v.CopyTotalDue @>)
+                        |> withCaption "Copy"
+                        |> withButtonCommand this.ViewModel.CopyTextToClipboard
+                        |> withHeightRequest 24.0
+                        |> withBackgroundColor Color.Green
+                        |> withCornerRadius 12
+                        |> withButtonFontSize 12.0
+                        |> withButtonPadding (new Thickness(0.0))
+                        |> withMargin (new Thickness(12.0))
+                        |> withOneWayBinding(this, <@ fun vm -> vm.InterestAccrued @>, <@ fun v -> v.CopyInterestAccrued.CommandParameter @>, fun f -> f.ToString("#.00") :> obj)
                     |]) |> createFromRows |> withBackgroundColor Color.DarkSlateGray |> withMargin (new Thickness(12.0))
             )
             |> withDrawerLocation SideDrawerLocation.Top
